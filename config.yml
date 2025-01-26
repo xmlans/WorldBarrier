@@ -1,0 +1,10 @@
+# 哪些世界需要启用保护屏障
+world-barriers:
+  world:
+    enabled: true
+    limit: 2000
+  world_nether:
+    enabled: true
+    limit: 1000
+  world_the_end:
+    enabled: false
