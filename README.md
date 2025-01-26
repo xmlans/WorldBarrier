@@ -1,4 +1,5 @@
 # WorldBarrier 世界屏障
+<b>Download 下载 https://www.spigotmc.org/resources/worldbarrier.122178/</b><br>
 A minecraft plugin that freely restricts world boundaries and automatically alerts and teleports spawn points when the player exceeds them. <br>
 Support 1.8-1.12.2 支持1.8-1.12.2的版本 更高版本支持性请自行修改源代码，本插件已开源 <br>
 此插件的目的是在不同的世界设置边界距离以防止玩家超出边界，在玩家到达限制时发送一条消息提醒并将玩家传送会出生点 <br>
