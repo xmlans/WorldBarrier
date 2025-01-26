@@ -24,18 +24,17 @@ public class WorldBarrier extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-        // Èç¹ûÅäÖÃÎÄ¼ş²»´æÔÚ£¬ÔòÉú³ÉÄ¬ÈÏÅäÖÃ
         saveDefaultConfig();
         checkAndCreateConfig();
         
         loadWorldBarriers();
         Bukkit.getPluginManager().registerEvents(this, this);
-        getLogger().info("WorldBarrier ÒÑÆôÓÃ£¡");
+        getLogger().info("WorldBarrier å·²å¯ç”¨ï¼");
     }
 
     @Override
     public void onDisable() {
-        getLogger().info("WorldBarrier ÒÑ½ûÓÃ£¡");
+        getLogger().info("WorldBarrier å·²ç¦ç”¨ï¼");
     }
 
     private void loadWorldBarriers() {
@@ -59,7 +58,7 @@ public class WorldBarrier extends JavaPlugin implements Listener {
             int limit = worldBarriers.get(worldName);
             if (Math.abs(to.getX()) > limit || Math.abs(to.getZ()) > limit) {
                 player.teleport(to.getWorld().getSpawnLocation());
-                player.sendMessage(ChatColor.RED + "ÄãÎŞ·¨Àë¿ª±ß½ç£¡ÒÑ½«Äã´«ËÍ»Ø³öÉúµã¡£");
+                player.sendMessage(ChatColor.RED + "ä½ æ— æ³•ç¦»å¼€è¾¹ç•Œï¼å·²å°†ä½ ä¼ é€å›å‡ºç”Ÿç‚¹ã€‚");
             }
         }
     }
@@ -69,12 +68,12 @@ public class WorldBarrier extends JavaPlugin implements Listener {
         if (command.getName().equalsIgnoreCase("worldbarrier")) {
             if (args.length == 1 && args[0].equalsIgnoreCase("reload")) {
                 if (!sender.hasPermission("worldbarrier.reload")) {
-                    sender.sendMessage(ChatColor.RED + "ÄãÃ»ÓĞÈ¨ÏŞÖ´ĞĞ´ËÃüÁî£¡");
+                    sender.sendMessage(ChatColor.RED + "ä½ æ²¡æœ‰æƒé™æ‰§è¡Œæ­¤å‘½ä»¤ï¼");
                     return true;
                 }
                 reloadConfig();
                 loadWorldBarriers();
-                sender.sendMessage(ChatColor.GREEN + "WorldBarrier ÅäÖÃÒÑÖØÔØ£¡");
+                sender.sendMessage(ChatColor.GREEN + "WorldBarrier é…ç½®å·²é‡è½½ï¼");
                 return true;
             }
         }
@@ -84,7 +83,7 @@ public class WorldBarrier extends JavaPlugin implements Listener {
     private void checkAndCreateConfig() {
         File configFile = new File(getDataFolder(), "config.yml");
         if (!configFile.exists()) {
-            getLogger().info("Î´ÕÒµ½ÅäÖÃÎÄ¼ş£¬ÕıÔÚÉú³ÉÄ¬ÈÏÅäÖÃ...");
+            getLogger().info("æœªæ‰¾åˆ°é…ç½®æ–‡ä»¶ï¼Œæ­£åœ¨ç”Ÿæˆé»˜è®¤é…ç½®...");
             saveResource("config.yml", false);
         }
     }
